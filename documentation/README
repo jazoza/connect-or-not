@@ -30,3 +30,6 @@ HOW TO
   - In the patch, choose the correct port (click the message "devices" connected to comport object, in the pd control window look for your device in the list of available serial ports; under Linux it is usually 0 or 1 when more devices are connected; under windows it is often 64); if necessary, edit the message "open 0" to correct the port number;
   - The system should start working;
   - Double-click subpatches (objects that look like [pd smth]) to edit the way they react to values received from the application
+  - While using the system, it is also good to log the traffic as it is being used; to do this, open the Terminal, cd into the documentation folder and run:
+  $ python log-osc-traffic-49999.py
+
