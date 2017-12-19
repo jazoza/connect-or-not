@@ -37,11 +37,11 @@ def breathing(m1,m2,m3,addSpeed,addSpeed2,duration): # if speed = 10
     time.sleep(duration)
 
 def valuecase(value,scaling):
-    s = interp1d([scaling[0], scaling[1]],[89,10])
-    t = interp1d([scaling[0], scaling[1]],[1,4])
+    s = interp1d([scaling[0], scaling[1]],[85,10])
+    t = interp1d([scaling[0], scaling[1]],[1.5,5])
     if value > scaling[1]:
         speed = 10
-        sleeping_time = 4
+        sleeping_time = 5
     else:
         speed = int(s(value))
         sleeping_time = float(t(value))
@@ -60,17 +60,17 @@ while True:
         ### calculate the movement:
         bajts = abs(int(line.split(b';')[2]))
         #print("bajts", bajts)
-        bajtsLimit=[150, 7000, 10000, 30000]
+        bajtsLimit=[0, 100000]
         speedBajt, sleepBajt = valuecase(bajts, bajtsLimit)
-        print("speed according to bytes(which are ", bajts, ,")", speedBajt)
+        print("speed according to bytes(which are ", bajts, ")", speedBajt)
         conv = int(line.split(b';')[3])
         #print("conv", conv)
-        convLimit=[2, 10, 50, 120]
+        convLimit=[0, 120]
         speedConv, sleepConv = valuecase(conv, convLimit)
         print("speed according to conversation", speedConv)
         sms = int(line.split(b';')[4])
         #print("sms", sms)
-        smsLimit = [1, 2, 3, 4]
+        smsLimit = [0, 5]
         speedSms, sleepSms = valuecase(sms, smsLimit)
         print("speed according to sms", speedSms)
         signals = int(line.split(b';')[5])
