@@ -1,10 +1,7 @@
-working directory fo collaboration on development of a city-wide connect-or-not installation;
-PROJECT PROPOSAL
-SKETCHES
+# Connect or Not 
+system for interaction with wireless network traffic load
 
-features also documentation of the 'connect or not' residency at MMC Zavod K4 in January 2014
-PYTHON CODE
-ARDUINO CODE
-PUREDATA PATCHES
-OTHER
-some additional documentation can be found on http://emperors-wiki.kucjica.org/doku.php?id=start#mmc_k6_4_residency
+Includes (reverse chronological order):
+
+ * Connect or Not installation at IGF, UN Geneva (December 2017)
+ * Connect or Not working material from residency at K4, Ljubljana (February 2014)
