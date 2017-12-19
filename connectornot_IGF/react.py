@@ -24,17 +24,17 @@ from scipy.interpolate import interp1d
 
 servoList = [servoclass.Servo(i+1) for i in range(4)]
 
-def breathing(m1,m2,m3,addSpeed,addSpeed2,duration): # if speed = 10
+def breathing(m1,m2,m3,addSpeed,addSpeed2,duration): # if speed = 85
     #breathe in
-    m1.move(addSpeed) #80
-    m3.move(addSpeed) #80
-    m2.move(addSpeed2) #85
+    m1.move(addSpeed) #85
+    m3.move(addSpeed) #85
+    m2.move(addSpeed2) #8x
     time.sleep(duration)
     # breathe out
-    m1.move(90-addSpeed) #92
-    m3.move(90-addSpeed) #92
-    m2.move(90-addSpeed2) #92
-    time.sleep(duration)
+    m1.move(90+int(round((90-addSpeed)/2))) #95
+    m3.move(90+int(round((90-addSpeed)/2))) #92
+    m2.move(90+int(round((90-addSpeed2)/2))) #9x
+    time.sleep(duration*2)
 
 def valuecase(value,scaling):
     s = interp1d([scaling[0], scaling[1]],[85,10])
@@ -95,7 +95,6 @@ while True:
         else:
             print("something weird")
             breathing(servoList[0], servoList[1], servoList[2], speedFinal, speedFinal, sleepFinal)
-        time.sleep(2)
     except KeyboardInterrupt:
         for i in range(len(servoList)):
             servoList[i].move(90)
