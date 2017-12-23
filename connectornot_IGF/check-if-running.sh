@@ -1,10 +1,11 @@
+#!/bin/bash
 while true
 do
-    if pgrep -f "python test-py.py" &>/dev/null; then
+    if pgrep -fl "react.py" &>/dev/null; then
       echo "it is already running"
       sleep 60
     else
       echo "not running"
-      python test-py.py&
+      python react.py&
     fi
 done
